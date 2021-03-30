@@ -8,7 +8,7 @@ export function App() {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   function handleOpenModal() {
-      setIsOpenModal(true);        
+      setIsOpenModal(true);
   }
 
   function handleCloseModal() {
@@ -19,7 +19,7 @@ export function App() {
     <>
       <Header isHandleOpenModal={handleOpenModal} />
       <Dashboard />
-      <NewTrasactionModal 
+      <NewTrasactionModal
         isOpen={isOpenModal}
         onRequestClose={handleCloseModal}
       />
