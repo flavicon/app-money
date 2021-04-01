@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
  margin-top: 4rem;
- 
+
  table {
   width: 100%;
   border-spacing: 0 0.5rem;
@@ -20,21 +20,21 @@ export const Container = styled.div`
     border: 0;
     color: var(--text-body);
     background: var(--shape);
-    
+
     :first-child {
       color: var(--text-titlle);
     }
 
-    &.saida {
+    &.withdraw {
       color: var(--red);
     }
 
-    &.entrada {
+    &.deposit {
       color: var(--green);
     }
   }
-  
-  
- } 
+
+
+ }
 
 `

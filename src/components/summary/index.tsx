@@ -2,14 +2,18 @@ import { Container } from './styles';
 import incomeImg from '../../assets/income.svg';
 import outcomeImg from '../../assets/outcome.svg';
 import totalImg from '../../assets/total.svg';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { api } from '../../services/api';
+import { TransactionContext } from '../../TransactionsContext';
 
 export function Summary() {
-  
+  const data = useContext(TransactionContext);
+
+  console.log(data);
+
   useEffect(() => {
     api.get('transactions')
-      .then(response => console.log(response.data));
+      .then(response => (response.data));
   }, []);
 
   return(
@@ -32,9 +36,9 @@ export function Summary() {
        <header>
          <p>Totais</p>
          <img src={totalImg} alt="Totais"/>
-       </header>      
+       </header>
        <strong>R$ 500,00</strong>
       </div>
-    </Container>	    
+    </Container>
   )
 }
