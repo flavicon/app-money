@@ -104,5 +104,4 @@ export function NewTrasactionModal(
             </Container>
         </Modal>
     )
-
 }
