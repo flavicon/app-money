@@ -1,38 +1,43 @@
 import Modal from 'react-modal';
+import { FormEvent, useState } from 'react';
+import { useTransactions } from '../../hooks/useTransactions';
+
 import incomeImg from '../../assets/income.svg';
 import outcomeImg from '../../assets/outcome.svg';
 import closeImg from '../../assets/close.svg';
-import { Container, TransactionTypeContainer, RadioBox } from './styles';
-import { FormEvent, useState } from 'react';
-import { api } from '../../services/api';
 
+import { Container, TransactionTypeContainer, RadioBox } from './styles';
 interface NewTrasactionModalProps {
     isOpen: boolean;
     onRequestClose: () => void;
 }
 
-export function NewTrasactionModal(
-    {isOpen, onRequestClose}: NewTrasactionModalProps
-) {
+export function NewTrasactionModal({isOpen, onRequestClose}: NewTrasactionModalProps) {
+    const { createTransaction } = useTransactions();
 
     const [type, setType] = useState('deposit');
     const [title, setTitle] = useState('');
-    const [value, setValue] = useState(0);
+    const [amount, setAmount] = useState(0);
     const [category, setCategory] = useState('');
 
-    function handleCreateNewTransaction(event: FormEvent) {
+    async function handleCreateNewTransaction(event: FormEvent) {
 
         event.preventDefault();
 
-
-        const data = ({
-            type,
+        await createTransaction({
             title,
-            value,
-            category
+            amount,
+            category,
+            type
         });
 
-        api.post('/transactions', data);
+        setTitle('');
+        setType('deposit');
+        setAmount(0);
+        setCategory('');
+
+        onRequestClose();
+
     }
 
     return(
@@ -62,8 +67,8 @@ export function NewTrasactionModal(
                 <input
                     type="number"
                     placeholder="Preço"
-                    value={value}
-                    onChange={event => setValue(Number(event.target.value))}
+                    value={amount}
+                    onChange={event => setAmount(Number(event.target.value))}
                 />
 
 

@@ -1,6 +1,6 @@
 import { Header } from "./components/header";
 import { Dashboard } from './components/dashboard'
-import { TransactionProvider } from "./TransactionsContext";
+import { TransactionProvider } from "./hooks/useTransactions";
 import { NewTrasactionModal } from './components/newTrasactionModal';
 import { GlobalStyle } from "./styles/global";
 import { useState } from 'react';
