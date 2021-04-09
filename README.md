@@ -2,8 +2,6 @@
 <h1 style="text-align: center">
 dt m<img src="public/favicon.png">ney  </h1>
 
-<hr>
-
 <h2> :pushpin: O projeto consiste em uma aplicação para registrar transações financeiras, a aplicação mostra o total de receita em "Entradas",    &nbsp;total de despesas em "Saidas" e o Total. </h2>
 
 <h3> Desenvolvido utilizando Reactjs, Styled-components, react-modal, miragejs e axios :rocket: </h3>
