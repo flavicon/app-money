@@ -19,11 +19,11 @@ repositório: </h3>
 
 `git clone https://github.com/flavicon/app-money.git`
 
-<h3> Acesse o diretório :open_file_folder: app-money </h3>
+<h3> Acesse o :open_file_folder: diretório app-money </h3>
 
 `cd app-money`
 
-<h3> Instale todas as bibliotecas :books: presentes no projeto com o comando: </h3>
+<h3> Instale todas as :books: bibliotecas presentes no projeto com o comando: </h3>
 
 `yarn`
 
@@ -31,4 +31,5 @@ repositório: </h3>
  
  `yarn start`
  
+ <h4>O projeto irá rodar no endereço http://localhost:3000</h4>
   
